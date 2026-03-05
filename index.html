@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Servicio Técnico PC</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #cceeff, #99ddff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Ventana flotante */
+.card {
+    background: white;
+    width: 90%;
+    max-width: 700px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    padding: 30px;
+    overflow-y: auto;
+    max-height: 90vh;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+}
+
+h1 {
+    text-align: center;
+    color: #0077aa;
+}
+
+.service {
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+}
+
+.service-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price {
+    font-weight: bold;
+    color: #0099cc;
+}
+
+button {
+    margin-top: 10px;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 10px;
+    background: #00aaff;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #0088cc;
+}
+
+.more-info {
+    display: none;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #444;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>Servicio Técnico de Computadoras</h1>
+
+    <div class="service">
+        <div class="service-header">
+            <h3>Limpieza básica</h3>
+            <span class="price">$10.000</span>
+        </div>
+        <button onclick="toggleInfo(1)">Más información</button>
+        <div id="info1" class="more-info">
+            Limpieza interna con aire comprimido, eliminación de polvo y revisión general del equipo.
+        </div>
+    </div>
+
+    <div class="service">
+        <div class="service-header">
+            <h3>Limpieza profunda</h3>
+            <span class="price">$18.000</span>
+        </div>
+        <button onclick="toggleInfo(2)">Más información</button>
+        <div id="info2" class="more-info">
+            Desarme completo del equipo, limpieza detallada de ventiladores, placa madre y componentes internos.
+        </div>
+    </div>
+
+    <div class="service">
+        <div class="service-header">
+            <h3>Cambio de pasta térmica</h3>
+            <span class="price">$12.000</span>
+        </div>
+        <button onclick="toggleInfo(3)">Más información</button>
+        <div id="info3" class="more-info">
+            Reemplazo de pasta térmica del procesador para mejorar temperatura y rendimiento.
+        </div>
+    </div>
+
+    <div class="service">
+        <div class="service-header">
+            <h3>Instalación de Office</h3>
+            <span class="price">$8.000</span>
+        </div>
+        <button onclick="toggleInfo(4)">Más información</button>
+        <div id="info4" class="more-info">
+            Instalación y configuración de paquete de oficina listo para usar.
+        </div>
+    </div>
+
+    <div class="service">
+        <div class="service-header">
+            <h3>Instalación y configuración de Windows</h3>
+            <span class="price">$15.000</span>
+        </div>
+        <button onclick="toggleInfo(5)">Más información</button>
+        <div id="info5" class="more-info">
+            Instalación del sistema operativo, drivers actualizados y optimización inicial del equipo.
+        </div>
+    </div>
+
+</div>
+
+<script>
+function toggleInfo(id) {
+    const info = document.getElementById("info" + id);
+    if (info.style.display === "block") {
+        info.style.display = "none";
+    } else {
+        info.style.display = "block";
+    }
+}
+</script>
+
+</body>
+</html>
